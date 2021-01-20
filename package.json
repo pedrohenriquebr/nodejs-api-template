@@ -4,7 +4,7 @@
   "description": "NodeJS API Template",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "repository": "https://github.com/pedrohenriquebr/nodejs-api-template",
   "author": "pedrohenriquebr <pedrohenriquebraga735@gmail.com>",
