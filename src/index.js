@@ -13,7 +13,21 @@ app.get('/', (req, res) => {
 //Items router
 app.route('/items')
     .get((req, res) => {
-        res.send(items);
+        res.json(items);
+    })
+    .post((req,res)=>{
+        const {title, priority} = req.body;
+        const lastId = items.sort((a, b) => a.id - b.id).slice(-1)[0].id;
+        items.push({
+            id: lastId + 1,
+            title,
+            priority,
+            created: new Date(Date.now())
+                .toISOString()
+                .split('T')[0]
+        });
+
+        res.send({Id: lastId + 1});
     })
 
 app.listen(port, ()=>{
